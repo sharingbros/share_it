@@ -1,0 +1,40 @@
+package seleniumwebdriverdemo;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class HotelBookingPage {
+
+	
+	static WebDriver driver;
+	
+	
+	@BeforeClass
+	public static void launchBrowser() {
+		driver= new FirefoxDriver();
+		driver.get("file:///D:/Module%203/App/hotelbooking.html");
+		
+	}
+		
+	
+	@Test
+	public void testFirstName() {
+		WebElement userName=driver.findElement(By.name("txtFN"));
+		userName.sendKeys("Venkateswarlu");
+		WebElement lastName=driver.findElement(By.name("txtLN"));
+		lastName.sendKeys("Immadisetty");
+		WebElement email=driver.findElement(By.name("Email"));
+		email.sendKeys("ivenkateswarlu777@gmail.com");
+		WebElement number=driver.findElement(By.name("Phone"));
+		number.sendKeys("8686586905");
+
+		
+	}
+
+}
